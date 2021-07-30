@@ -1,8 +1,16 @@
+import Navbar from "./components/Navbar";
+import Container from "./components/Container";
+import Loading from "./components/Loading";
+import Error from "./components/Error";
+
 function App() {
   return (
-    <div>
-      <h1>Hello, world!</h1>
-    </div>
+    <>
+      <Navbar />
+      <Container>
+        <h1>Hello, world!</h1>
+      </Container>
+    </>
   );
 }
 
