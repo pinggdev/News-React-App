@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import NewsCard from "../NewsCard";
+
 import styles from "./NewsList.module.css";
 
 const NewsList = ({ articles }) => {
@@ -7,9 +9,17 @@ const NewsList = ({ articles }) => {
     <div className={styles.newsList}>
       {articles.map((article, index, arr) => {
         return (
-          <div key={index}>
-            <h1>{article.title}</h1>
-          </div>
+          <NewsCard
+            key={index}
+            src={article.urlToImage}
+            title={article.title}
+            publishedAt={article.publishedAt}
+            author={article.author}
+            sourceName={article.source.name}
+            description={article.description}
+            url={article.url}
+            notLastChild={!(arr.length === index + 1)}
+          />
         );
       })}
     </div>
