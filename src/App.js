@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Container from "./components/Container";
 import Loading from "./components/Loading";
 import Error from "./components/Error";
+import NewsList from "./components/NewsList";
 
 import { getNews } from "./services/getNews";
 
@@ -27,7 +28,7 @@ function App() {
       }
 
       setLoading(false);
-      setArticles([res.articles]);
+      setArticles(res.articles);
     };
     fetchTechNews();
   }, []);
@@ -38,7 +39,7 @@ function App() {
       <Container>
         {loading && <Loading />}
         {error && <Error />}
-        {!loading && articles.length > 0 && <h1>Hello, articles</h1>}
+        {!loading && articles.length > 0 && <NewsList articles={articles} />}
       </Container>
     </>
   );
