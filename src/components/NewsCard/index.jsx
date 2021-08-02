@@ -3,6 +3,7 @@ import classnames from "classnames";
 import PropTypes from "prop-types";
 
 import styles from "./NewsCard.module.css";
+import { formatDate } from "../../utils/formatDate";
 
 const NewsCard = ({
   src,
@@ -27,7 +28,7 @@ const NewsCard = ({
         </div>
 
         <div className={styles.newsCardContent}>
-          <p className={styles.newsCardDate}>{publishedAt}</p>
+          <p className={styles.newsCardDate}>{formatDate(publishedAt)}</p>
           <p className={styles.newsCardAuthor}>{`${author} | ${sourceName}`}</p>
           <p className={styles.newsCardDesc}>{description}</p>
           <a
