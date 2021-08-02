@@ -8,6 +8,10 @@ const NewsList = ({ articles }) => {
   return (
     <div className={styles.newsList}>
       {articles.map((article, index, arr) => {
+        if (!article.urlToImage || !article.author || !article.content) {
+          return null;
+        }
+
         return (
           <NewsCard
             key={index}
